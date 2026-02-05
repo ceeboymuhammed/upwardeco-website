@@ -12,7 +12,7 @@
 
   /* Global layout container: centers content and adds left/right breathing room */
   .container-px {
-    @apply mx-auto w-full max-w-5xl px-6 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
   }
 }
 
@@ -52,4 +52,40 @@ body {
 /* Headings */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
+}
+/* HubSpot form styling (keeps the page corporate-clean) */
+.hs-form {
+  width: 100%;
+}
+
+.hs-form label {
+  @apply text-sm font-semibold text-zinc-800;
+}
+
+.hs-form .hs-form-field {
+  @apply mb-4;
+}
+
+.hs-form input[type="text"],
+.hs-form input[type="email"],
+.hs-form input[type="number"],
+.hs-form select,
+.hs-form textarea {
+  @apply mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 outline-none;
+}
+
+.hs-form input:focus,
+.hs-form select:focus,
+.hs-form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(46, 125, 91, 0.18);
+  border-color: #2e7d5b;
+}
+
+.hs-form .hs-error-msgs {
+  @apply mt-2 text-xs text-red-600;
+}
+
+.hs-form .hs-button,
+.hs-form input[type="submit"] {
+  @apply mt-2 inline-flex w-full items-center justify-center rounded-xl bg-brand-deep px-5 py-3 text-sm font-semibold text-white hover:opacity-95 sm:w-auto;
 }

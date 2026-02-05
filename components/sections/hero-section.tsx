@@ -1,76 +1,78 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HeroSection() {
+const trustItems = [
+  "Federal Ministry of Environment (Accredited)",
+  "RAN",
+  "WAPAN",
+  "Food & Beverage Recycling Alliance",
+  "54Collective",
+  "People’s Accords",
+  "SendWaste.com",
+  "NESREA accreditation in progress",
+];
+
+export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden">
-      {/* Background image */}
+    <section className="relative isolate overflow-hidden bg-brand-deep">
+      {/* Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/Upwardeco_team.jpg"
-          alt="Lush green forest"
+          src="/images/hero.jpg"
+          alt="Real-world sustainability work"
           fill
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/25 to-white/0" />
+        <div className="absolute inset-0 bg-brand-deep/70" />
       </div>
 
-      <div className="flex min-h-[72vh] items-center py-16 sm:py-24">
-        <div className="w-full max-w-6xl px-6 sm:px-8 lg:px-4">
-        <div className="max-w-2xl">
-          <p className="inline-flex animate-fade-in items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white ring-1 ring-white/20">
-            Sustainability • Compliance • Circularity
-          </p>
-
-          <h1 className="mt-5 animate-fade-up text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Build a greener business without the guesswork.
+      <div className="container-px py-16 sm:py-24">
+        <div className="max-w-4xl">
+          <h1 className="text-3xl font-bold leading-tight text-white sm:text-5xl">
+            Environmental Sustainability Solutions That Help Businesses Reduce Waste,
+            Cut Costs, and Meet Global Standards
           </h1>
 
-          <p
-            className="mt-4 animate-fade-up text-base leading-relaxed text-white/90 sm:text-lg"
-            style={{ animationDelay: "90ms" }}
-          >
-            UpwardEco helps teams reduce environmental impact through audits,
-            training, and circular systems that actually stick.
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
+            Accredited sustainability consultants delivering environmental audits,
+            circular economy systems, and sustainability training — while creating
+            inclusive green livelihoods.
           </p>
 
-          <div
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
-            style={{ animationDelay: "140ms" }}
-          >
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/services"
-              className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
+              href="/environmental-audits"
+              className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-brand-deep hover:bg-zinc-100"
             >
-              Explore Services
+              Request an Environmental Audit
             </Link>
             <Link
-              href="/contact"
-              className="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/25 hover:bg-white/15"
+              href="/partnerships"
+              className="inline-flex items-center justify-center rounded-xl bg-brand-accent px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
             >
-              Get in Touch
+              Partner or Volunteer
             </Link>
           </div>
+        </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-3 text-white/90 sm:grid-cols-3">
-            <Stat label="Environmental audits" value="Fast & thorough" />
-            <Stat label="Sustainability training" value="Team-ready" />
-            <Stat label="Circular systems" value="Practical wins" />
+        {/* Trust bar */}
+        <div className="mt-12 rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur">
+          <div className="text-xs font-semibold uppercase tracking-wide text-white/80">
+            Trusted / Recognized by
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {trustItems.map((t) => (
+              <span
+                key={t}
+                className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/90 ring-1 ring-white/15"
+              >
+                {t}
+              </span>
+            ))}
           </div>
         </div>
       </div>
-      </div>
     </section>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/15">
-      <div className="text-xs text-white/80">{label}</div>
-      <div className="mt-1 text-sm font-semibold">{value}</div>
-    </div>
   );
 }

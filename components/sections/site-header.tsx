@@ -1,24 +1,20 @@
 import Link from "next/link";
-import { Leaf } from "lucide-react";
 
 const nav = [
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
+  { label: "Audits", href: "/environmental-audits" },
+  { label: "Training", href: "/training" },
+  { label: "Circular Systems", href: "/material-recovery" },
   { label: "Impact", href: "/impact" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200/70 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
       <div className="container-px flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-600 text-white">
-            <Leaf className="h-5 w-5" aria-hidden />
-          </span>
-          <span className="text-sm font-semibold tracking-tight sm:text-base">
-            UpwardEco Ltd
-          </span>
+        <Link href="/" className="text-sm font-semibold tracking-tight sm:text-base">
+          <span className="text-brand-deep">Upward</span>Eco Ltd
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -33,14 +29,12 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
-          >
-            Book a Consultation
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className="rounded-xl bg-brand-deep px-4 py-2 text-sm font-semibold text-white hover:opacity-95"
+        >
+          Book a Consultation
+        </Link>
       </div>
     </header>
   );

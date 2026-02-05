@@ -44,7 +44,7 @@ function Input({
         required={required}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black outline-none placeholder:text-black/40 focus:border-black/20 focus:ring-2 focus:ring-[var(--theme)]/20"
+        className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black outline-none placeholder:text-black/40 focus:border-black/20 focus:ring-2 focus:ring-(--theme)/20"
       />
     </label>
   );
@@ -75,7 +75,7 @@ function Textarea({
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
         rows={6}
-        className="mt-2 w-full resize-y rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black outline-none placeholder:text-black/40 focus:border-black/20 focus:ring-2 focus:ring-[var(--theme)]/20"
+        className="mt-2 w-full resize-y rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black outline-none placeholder:text-black/40 focus:border-black/20 focus:ring-2 focus:ring-(--theme)/20"
       />
     </label>
   );
@@ -170,7 +170,7 @@ export function ContactFormFaqSection() {
               <button
                 type="submit"
                 disabled={!canSubmit || status === "sending"}
-                className="inline-flex items-center justify-center rounded-xl bg-[var(--theme)] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-xl bg-(--theme) px-5 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "sending" ? "Sending…" : "Submit"}
               </button>
