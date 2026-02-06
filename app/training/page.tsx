@@ -1,20 +1,17 @@
-import SiteHeader from "@/components/site-header";
-import SiteFooter from "@/components/site-footer";
-import HeroSimple from "@/components/hero-simple";
-import Section from "@/components/section";
-import CtaStrip from "@/components/cta-strip";
-
-import WhyTrainingMatters from "@/components/training/why-training-matters";
-import WhoItsFor from "@/components/training/who-its-for";
-import TrainingModules from "@/components/training/training-modules";
-import TrainingFormats from "@/components/training/training-formats";
-import TrainingOutcomes from "@/components/training/training-outcomes";
-import LinkToAudits from "@/components/training/link-to-audits";
-
+import HeroSimple from "@/components/trainings/training-hero";
+import Section from "@/components/shared/section";
+import CtaStrip from "@/components/shared/cta-strip";
+import WhyTrainingMatters from "@/components/trainings/why-training-matters";
+import WhoItsFor from "@/components/trainings/who-its-for";
+import TrainingModules from "@/components/trainings/training-modules";
+import TrainingFormats from "@/components/trainings/training-formats";
+import TrainingRequestForm from "@/components/trainings/training-request-form";
+import TrainingOutcomes from "@/components/trainings/training-outcomes";
+import LinkToAudits from "@/components/trainings/link-to-audits";
 export default function TrainingPage() {
   return (
     <div className="flex min-h-dvh flex-col">
-      <SiteHeader />
+ 
 
       <main className="flex-1">
         <HeroSimple
@@ -75,10 +72,16 @@ export default function TrainingPage() {
           primary={{ label: "Request Training", href: "/contact" }}
           secondary={{ label: "Partner With Us", href: "/partnerships" }}
           tone="dark"
-        />
+        />        
       </main>
+<Section
+  title="Request training"
+  subtitle="Tell us what you need—get a tailored training plan for your team."
+>
+  <TrainingRequestForm />
+</Section>
 
-      <SiteFooter />
+    
     </div>
   );
 }

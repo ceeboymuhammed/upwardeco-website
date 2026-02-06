@@ -34,7 +34,7 @@ export default function FinalCta() {
         </div>
 
         <p className="mt-6 text-center text-xs text-zinc-500">
-          Prefer email? Send your site details to hello@upwardeco.example
+          Prefer email? Send your site details to hello@upwardeco.com
         </p>
       </div>
     </section>

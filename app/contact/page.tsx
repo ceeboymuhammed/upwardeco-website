@@ -1,21 +1,35 @@
-// app/contact/page.tsx
-import type { Metadata } from "next";
-import { ContactMiniHero } from "@/components/contact/contact-mini-hero";
-import { ContactInfoSection } from "@/components/contact/contact-info-section";
-import { ContactFormFaqSection } from "@/components/contact/contact-form-faq-section";
-
-export const metadata: Metadata = {
-  title: "Contact | UpwardEco Ltd",
-  description: "Get in touch with UpwardEco Ltd.",
-};
+import ContactHeader from "@/components/contact/contact-header";
+import ContactInfo from "@/components/contact/contact-info";
+import HubspotAuditForm from "@/components/contact/hubspot-audit-form";
+import HubspotInquiryForm from "@/components/contact/hubspot-inquiry-form";
+import CalendlyInline from "@/components/contact/calendly-inline";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <ContactMiniHero />
-       <ContactFormFaqSection />
-       <ContactInfoSection />
-    
-    </main>
+    <div className="flex min-h-dvh flex-col">
+   
+      <main className="flex-1">
+        <ContactHeader />
+
+        <section className="py-12 sm:py-16">
+          <div className="container-px grid gap-8 lg:grid-cols-3 lg:items-start">
+            <div className="lg:col-span-1">
+              <ContactInfo />
+            </div>
+
+            <div className="lg:col-span-2 space-y-8">
+              <div className="grid gap-8">
+                <HubspotAuditForm />
+                <HubspotInquiryForm />
+              </div>
+
+              <CalendlyInline />
+            </div>
+          </div>
+        </section>
+      </main>
+
+   
+    </div>
   );
 }

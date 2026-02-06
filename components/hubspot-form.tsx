@@ -2,23 +2,6 @@
 
 import { useEffect, useId, useMemo, useRef } from "react";
 
-declare global {
-  interface Window {
-    hbspt?: {
-      forms: {
-        create: (opts: {
-          region: string;
-          portalId: string;
-          formId: string;
-          target: string;
-          formInstanceId?: string;
-          onFormReady?: (form: HTMLFormElement) => void;
-          onFormSubmitted?: (form: HTMLFormElement) => void;
-        }) => void;
-      };
-    };
-  }
-}
 
 type HubspotFormProps = {
   region: string;

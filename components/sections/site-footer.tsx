@@ -27,8 +27,8 @@ export default function SiteFooter() {
           <div>
             <div className="text-sm font-semibold">Contact</div>
             <div className="mt-3 space-y-2 text-sm text-zinc-600">
-              <p>hello@upwardeco.example</p>
-              <p>+234 (0) 000 000 0000</p>
+              <p>hello@upwardeco.com</p>
+              <p>+234 (803) 962 2610</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
+import SiteHeader from "@/components/sections/site-header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
+import SiteFooter from "@/components/sections/site-footer";
 
 const heading = Montserrat({
   subsets: ["latin"],
@@ -24,7 +26,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${heading.variable} ${body.variable} font-body antialiased`}>
+        <SiteHeader />
         {children}
+        <SiteFooter />
+
       </body>
     </html>
   );
