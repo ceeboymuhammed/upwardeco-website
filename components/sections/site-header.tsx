@@ -3,43 +3,44 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Cpu, BarChart3, ShoppingBag, ArrowUpRight } from "lucide-react";
+import { Menu, X, ChevronDown, Cpu, BarChart3, ShoppingBag, ArrowUpRight, ShoppingCart } from "lucide-react";
 
 const platforms = [
   {
     title: "SendWaste.com",
     tagline: "ESG & Compliance SaaS",
-    desc: "Digital waste logistics tracking and automated compliance reporting.",
+    desc: "Enterprise waste logistics tracking and automated regulatory reporting.",
     href: "https://sendwaste.com",
     icon: BarChart3,
-    badge: "SaaS",
+    badge: "SaaS Platform",
     external: true,
   },
   {
     title: "WasteWise AI",
-    tagline: "Smart Recovery Engine",
-    desc: "Computer vision models for automated material stream identification.",
+    tagline: "Smart Sorting Engine",
+    desc: "Computer vision classification models for automated stream identification.",
     href: "https://wastewise-ai.vercel.app/",
     icon: Cpu,
-    badge: "AI Tech",
+    badge: "AI Engine",
     external: true,
   },
   {
     title: "AURA Store",
-    tagline: "Upcycled Goods Retail",
-    desc: "Closed-loop storefront selling goods built from recovered polymers.",
+    tagline: "Upcycled Product Storefront",
+    desc: "Closed-loop circular retail made from verified recovered polymers.",
     href: "https://aurastore.com.ng",
     icon: ShoppingBag,
-    badge: "E-Commerce",
+    badge: "Circular Retail",
     external: true,
   },
 ];
 
 const mainNav = [
-  { label: "Audits & Advisory", href: "/environmental-audits" },
-  { label: "Physical Hub", href: "/material-recovery" },
-  { label: "Impact", href: "/impact" },
-  { label: "About", href: "/about" },
+  { label: "Platform", href: "#tech-ecosystem", external: false },
+  { label: "Compliance & Audits", href: "/environmental-audits", external: false },
+  { label: "Impact & Infrastructure", href: "/material-recovery", external: false },
+  { label: "Shop", href: "https://aurastore.com.ng", external: true },
+  { label: "About", href: "/about", external: false },
 ];
 
 export default function SiteHeader() {
@@ -61,7 +62,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/90 backdrop-blur-md">
       <div className="container-px flex h-16 items-center justify-between">
         
-        {/* LOGO & BRAND BADGE */}
+        {/* LOGO & PLATFORM BADGE */}
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
             <Image
@@ -74,9 +75,9 @@ export default function SiteHeader() {
             />
           </Link>
 
-          <span className="hidden xl:inline-flex items-center gap-1.5 rounded-full bg-brand-deep/5 px-2.5 py-0.5 text-[11px] font-semibold text-brand-deep ring-1 ring-brand-deep/10">
+          <span className="hidden xl:inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 ring-1 ring-emerald-600/20">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Climate-Tech
+            AI-Powered B2B SaaS
           </span>
         </div>
 
@@ -95,7 +96,7 @@ export default function SiteHeader() {
               onClick={() => setDropdownOpen((v) => !v)}
               aria-expanded={dropdownOpen}
             >
-              <span>Platforms</span>
+              <span>Products</span>
               <ChevronDown className={`h-4 w-4 text-zinc-500 transition-transform duration-200 ${dropdownOpen ? "rotate-180 text-brand-deep" : ""}`} />
             </button>
 
@@ -103,7 +104,7 @@ export default function SiteHeader() {
             {dropdownOpen && (
               <div className="absolute top-full left-0 w-80 rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-zinc-200/80 animate-in fade-in slide-in-from-top-2 duration-150">
                 <div className="px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
-                  UpwardEco Tech Stack
+                  UpwardEco Software & Retail
                 </div>
                 
                 <div className="space-y-1 mt-1">
@@ -141,13 +142,26 @@ export default function SiteHeader() {
 
           {/* MAIN NAV LINKS */}
           {mainNav.map((i) => (
-            <Link
-              key={i.href}
-              href={i.href}
-              className="text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
-            >
-              {i.label}
-            </Link>
+            i.external ? (
+              <a
+                key={i.href}
+                href={i.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-zinc-700 hover:text-brand-deep transition-colors"
+              >
+                <span>{i.label}</span>
+                <ShoppingCart className="h-3.5 w-3.5 text-zinc-400" />
+              </a>
+            ) : (
+              <Link
+                key={i.href}
+                href={i.href}
+                className="text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
+              >
+                {i.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -167,7 +181,7 @@ export default function SiteHeader() {
             href="/contact"
             className="hidden rounded-xl bg-brand-deep px-4 py-2.5 text-xs font-semibold text-white hover:opacity-95 transition-all shadow-sm md:inline-flex"
           >
-            Request Audit
+            Book a Demo
           </Link>
 
           {/* MOBILE MENU TOGGLE */}
@@ -188,10 +202,10 @@ export default function SiteHeader() {
         <div className="md:hidden border-t border-zinc-200 bg-white">
           <div className="container-px py-4 space-y-4">
             
-            {/* TECH STACK MOBILE SECTION */}
+            {/* PRODUCTS */}
             <div>
               <div className="px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
-                Our Tech Platforms
+                Products & Retail
               </div>
               <div className="mt-2 grid gap-1.5">
                 {platforms.map((p) => (
@@ -215,20 +229,34 @@ export default function SiteHeader() {
               </div>
             </div>
 
-            {/* MAIN PAGES MOBILE SECTION */}
+            {/* NAVIGATION LINKS */}
             <div className="pt-2 border-t border-zinc-100 flex flex-col gap-1">
               <div className="px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
-                Company & Services
+                Platform & Company
               </div>
               {mainNav.map((i) => (
-                <Link
-                  key={i.href}
-                  href={i.href}
-                  className="rounded-xl px-3 py-2 text-xs font-medium text-zinc-800 hover:bg-zinc-50"
-                  onClick={() => setOpen(false)}
-                >
-                  {i.label}
-                </Link>
+                i.external ? (
+                  <a
+                    key={i.href}
+                    href={i.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-xl px-3 py-2 text-xs font-semibold text-zinc-900 hover:bg-zinc-50 flex items-center justify-between"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span>{i.label}</span>
+                    <ShoppingCart className="h-3.5 w-3.5 text-zinc-400" />
+                  </a>
+                ) : (
+                  <Link
+                    key={i.href}
+                    href={i.href}
+                    className="rounded-xl px-3 py-2 text-xs font-medium text-zinc-800 hover:bg-zinc-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    {i.label}
+                  </Link>
+                )
               ))}
 
               <Link
@@ -236,7 +264,7 @@ export default function SiteHeader() {
                 className="mt-3 inline-flex items-center justify-center rounded-xl bg-brand-deep px-4 py-3 text-xs font-semibold text-white hover:opacity-95"
                 onClick={() => setOpen(false)}
               >
-                Request Audit & Consultation
+                Book a Demo
               </Link>
             </div>
 

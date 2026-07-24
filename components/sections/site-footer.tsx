@@ -10,7 +10,7 @@ export default function SiteFooter() {
         {/* Main Grid */}
         <div className="grid gap-10 lg:grid-cols-12">
           
-          {/* Brand & Mission Column */}
+          {/* Brand Column */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
               <Image
@@ -23,20 +23,19 @@ export default function SiteFooter() {
             </Link>
 
             <p className="text-sm leading-relaxed text-zinc-600 max-w-sm">
-              Climate-tech enterprise combining AI-powered material sorting, digital compliance SaaS, and physical recovery infrastructure to accelerate Africa’s circular transition.
+              AI-powered ESG compliance and waste-tracking B2B SaaS platform backed by ground-truth material recovery infrastructure.
             </p>
 
-            {/* Accreditation Badge */}
             <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-brand-deep">
               <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
-              <span>Federal Ministry of Environment Accredited Consultant</span>
+              <span>Federal Ministry of Environment Accredited</span>
             </div>
           </div>
 
-          {/* Tech Platforms Column */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Software Products Column */}
+          <div className="lg:col-span-3 space-y-3">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
-              Tech Platforms
+              Flagship Products
             </div>
             <ul className="space-y-2.5 text-xs font-semibold text-zinc-700">
               <li>
@@ -46,7 +45,7 @@ export default function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-brand-deep transition-colors"
                 >
-                  <span>SendWaste.com</span>
+                  <span>SendWaste.com SaaS</span>
                   <ArrowUpRight className="h-3 w-3 text-zinc-400" />
                 </a>
               </li>
@@ -57,7 +56,7 @@ export default function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-brand-deep transition-colors"
                 >
-                  <span>WasteWise AI</span>
+                  <span>WasteWise AI Engine</span>
                   <ArrowUpRight className="h-3 w-3 text-zinc-400" />
                 </a>
               </li>
@@ -68,51 +67,46 @@ export default function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-brand-deep transition-colors"
                 >
-                  <span>AURA Store</span>
+                  <span>AURA Store (Upcycled Retail)</span>
                   <ArrowUpRight className="h-3 w-3 text-zinc-400" />
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Services & Hub Column */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Platform & Infrastructure Column */}
+          <div className="lg:col-span-2 space-y-3">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
-              Advisory & Infrastructure
+              Enterprise
             </div>
             <ul className="space-y-2.5 text-xs font-medium text-zinc-600">
               <li>
                 <Link className="hover:text-zinc-900 transition-colors" href="/environmental-audits">
-                  ISO 14001:2026 Compliance Audits
+                  Compliance Frameworks
                 </Link>
               </li>
               <li>
                 <Link className="hover:text-zinc-900 transition-colors" href="/material-recovery">
-                  Abuja Material Recovery Hub
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-zinc-900 transition-colors" href="/training">
-                  Corporate Sustainability Training
+                  Abuja Recovery Hub
                 </Link>
               </li>
               <li>
                 <Link className="hover:text-zinc-900 transition-colors" href="/partnerships">
-                  Venture & Institutional Partnerships
+                  Partnerships
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact & Facility Column */}
+          {/* Contact Column */}
           <div className="lg:col-span-3 space-y-3">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
-              Headquarters & Hub
+              Headquarters
             </div>
             <div className="space-y-2 text-xs text-zinc-600">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-brand-deep shrink-0 mt-0.5" />
-                <span>Jikwoyi Material Recovery Hub, Federal Capital Territory, Abuja, Nigeria</span>
+                <span>Jikwoyi Material Recovery Hub, Abuja, Nigeria</span>
               </div>
               <div className="flex items-center gap-2 pt-1">
                 <Mail className="h-4 w-4 text-brand-deep shrink-0" />
@@ -134,12 +128,12 @@ export default function SiteFooter() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-zinc-200/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <div>
-            © {new Date().getFullYear()} UpwardEco Ltd. All rights reserved. Registered Climate-Tech Infrastructure Enterprise.
+            © {new Date().getFullYear()} UpwardEco Ltd. All rights reserved. Registered Climate-Tech SaaS Enterprise.
           </div>
           <div className="flex items-center gap-4 text-zinc-400">
-            <span>ISO 14001:2026 Aligned</span>
+            <span>upwardeco.com</span>
             <span>•</span>
-            <span>Federal Ministry Accredited</span>
+            <span>ISO 14001:2026 Aligned</span>
           </div>
         </div>
 
