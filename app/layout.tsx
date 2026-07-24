@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import SiteFooter from "@/components/sections/site-footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const heading = Montserrat({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         {children}
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
