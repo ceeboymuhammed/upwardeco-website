@@ -62,7 +62,7 @@ export default function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="https://aurastore.com.ng"
+                  href="https://aura-store-self.vercel.app/shop"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-brand-deep transition-colors"

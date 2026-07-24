@@ -126,7 +126,7 @@ export default function Hero() {
 
               {/* AURA Store */}
               <a 
-                href="https://aurastore.com.ng" 
+                href="https://aura-store-self.vercel.app/shop" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block group rounded-xl bg-black/30 p-4 border border-white/10 hover:border-brand-accent/60 transition"

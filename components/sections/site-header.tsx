@@ -28,7 +28,7 @@ const platforms = [
     title: "AURA Store",
     tagline: "Upcycled Product Storefront",
     desc: "Closed-loop circular retail made from verified recovered polymers.",
-    href: "https://aurastore.com.ng",
+    href: "https://aura-store-self.vercel.app/shop",
     icon: ShoppingBag,
     badge: "Circular Retail",
     external: true,
@@ -39,7 +39,7 @@ const mainNav = [
   { label: "Platform", href: "#tech-ecosystem", external: false },
   { label: "Compliance & Audits", href: "/environmental-audits", external: false },
   { label: "Impact & Infrastructure", href: "/material-recovery", external: false },
-  { label: "Shop", href: "https://aurastore.com.ng", external: true },
+  { label: "Shop", href: "https://aura-store-self.vercel.app/shop", external: true },
   { label: "About", href: "/about", external: false },
 ];
 
